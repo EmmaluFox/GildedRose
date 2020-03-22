@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using NUnit.Framework;
 
-namespace GildedRose
+namespace GildedRose.Test
 {
-    class Program
+    [TestFixture]
+    public class Tests
     {
-        public static void Main(string[] args)
+        [Test]
+        public void GoldenMaster()
         {
-            Console.WriteLine("Welcome to the Gilded Rose stock control system");
-
             IList<Item> Items = new List<Item>{
                 new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
                 new Item {Name = "Aged Brie", SellIn = 2, Quality = 0},
@@ -36,7 +37,6 @@ namespace GildedRose
                 // this conjured item does not work properly yet
                 new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
             };
-
             var app = new GildedRose(Items);
 
 
